@@ -1,7 +1,50 @@
 part of '../data_access_object.dart';
 
+
 final class PostDataAccessObject extends DataAccessObject<Post> {
   const PostDataAccessObject(E621Client client) : super(client, 'posts');
+
+  Future<({String location, int postId})> uploadFile({
+    required List<int> file,
+    required List<String> tags,
+    List<String?> source = const [],
+    String rating = 'e',
+    String? description,
+    int? parentId,
+    bool? asPending,
+    String? filename,
+    MediaType? contentType,
+  }) async {
+    final MultipartFile multipartFile = MultipartFile.fromBytes(
+        'upload[file]', file,
+        filename: filename, contentType: contentType);
+
+    final Uri uri = Uri.https(super.host, 'uploads.json');
+
+    final request = MultipartRequest('POST', uri)
+      ..fields['upload[tag_string]'] = tags.join(' ')
+      ..fields['upload[source]'] = source.join(Platform.lineTerminator)
+      ..fields['upload[rating]'] = rating
+      //  ..fields['description'] = description ?? ''
+      //  ..fields['parent_id'] = parentId?.toString() ?? ''
+      //  ..fields['as_pending'] = asPending?.toString() ?? ''
+      ..files.add(multipartFile);
+
+    final response = await client.send(request);
+
+    if (response.statusCode != 200) {
+      throw Exception(
+          'Failed to upload file: ${response.statusCode} ${response.reasonPhrase} ${await response.stream.bytesToString()}');
+    }
+
+    final Map<String, dynamic> json =
+        jsonDecode(await response.stream.bytesToString());
+
+    return (
+      location: json['location'] as String,
+      postId: int.parse(json['post_id'])
+    );
+  }
 
   /// Gets a lisiting of posts
   /// - [limit] is the number of posts to get, must be between 1 and 320.
@@ -38,7 +81,7 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
 
     final List<dynamic> json = jsonDecode(response.body)['posts'];
 
-    if(json.isEmpty) {
+    if (json.isEmpty) {
       return [];
     }
 

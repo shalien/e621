@@ -22,7 +22,7 @@ class E621Client extends BaseClient {
   /// The API key to use for requests.
   final String apiKey;
 
-  String? _authHeader = '';
+  String? _authHeader;
 
   late final PostDataAccessObject posts;
 

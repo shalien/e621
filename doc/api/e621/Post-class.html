@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Post class from the e621 library, for the Dart programming language.">
+  <title>Post class - e621 library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">e621</a></li>
+    <li><a href="../e621/e621-library.html">e621</a></li>
+    <li class="self-crumb">Post class</li>
+  </ol>
+  <div class="self-name">Post</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="e621&#47;e621-library-sidebar.html"
+      data-below-sidebar="e621&#47;Post-class-sidebar.html">
+      <div>
+<h1><span class="kind-class">Post</span> class 
+    <a href="https://dart.dev/language/class-modifiers#final" class="feature feature-final" title="This class can neither be extended, implemented, nor mixed in.">final</a>
+ 
+</h1></div>
+
+    
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="../e621/Resource-class.html">Resource</a></li>
+      <li>Post</li>
+    </ul>
+  </dd>
+
+        
+        
+
+
+
+        
+  <dt>Annotations</dt>
+  <dd>
+    <ul class="annotation-list clazz-relationships">
+        <li>@<a href="https://pub.dev/documentation/meta/1.12.0/meta/immutable-constant.html">immutable</a></li>
+    </ul>
+  </dd>
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="Post" class="callable">
+          <span class="name"><a href="../e621/Post/Post.html">Post</a></span><span class="signature">(<span class="parameter" id="-param-id">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-createdAt"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">createdAt</span>, </span><span class="parameter" id="-param-updatedAt"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">updatedAt</span>, </span><span class="parameter" id="-param-fileWidth"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">fileWidth</span>, </span><span class="parameter" id="-param-fileHeight"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">fileHeight</span>, </span><span class="parameter" id="-param-fileExt"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileExt</span>, </span><span class="parameter" id="-param-fileSize"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">fileSize</span>, </span><span class="parameter" id="-param-fileMd5"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileMd5</span>, </span><span class="parameter" id="-param-fileUrl"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">fileUrl</span>, </span><span class="parameter" id="-param-previewWidth"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">previewWidth</span>, </span><span class="parameter" id="-param-previewHeight"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">previewHeight</span>, </span><span class="parameter" id="-param-previewUrl"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">previewUrl</span>, </span><span class="parameter" id="-param-sampleHas"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">sampleHas</span>, </span><span class="parameter" id="-param-sampleWidth"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sampleWidth</span>, </span><span class="parameter" id="-param-sampleHeight"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">sampleHeight</span>, </span><span class="parameter" id="-param-sampleUrl"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">sampleUrl</span>, </span><span class="parameter" id="-param-scoreUp"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">scoreUp</span>, </span><span class="parameter" id="-param-scoreDown"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">scoreDown</span>, </span><span class="parameter" id="-param-scoreTotal"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">scoreTotal</span>, </span><span class="parameter" id="-param-tagsGeneral"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsGeneral</span>, </span><span class="parameter" id="-param-tagsSpecies"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsSpecies</span>, </span><span class="parameter" id="-param-tagsCharacter"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsCharacter</span>, </span><span class="parameter" id="-param-tagsArtist"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsArtist</span>, </span><span class="parameter" id="-param-tagsInvalid"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsInvalid</span>, </span><span class="parameter" id="-param-tagsLore"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsLore</span>, </span><span class="parameter" id="-param-tagsMeta"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tagsMeta</span>, </span><span class="parameter" id="-param-changeSeq"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">changeSeq</span>, </span><span class="parameter" id="-param-lockedTags"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">lockedTags</span>, </span><span class="parameter" id="-param-flagsPending"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsPending</span>, </span><span class="parameter" id="-param-flagsFlagged"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsFlagged</span>, </span><span class="parameter" id="-param-flagsNoteLocked"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsNoteLocked</span>, </span><span class="parameter" id="-param-flagsStatusLocked"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsStatusLocked</span>, </span><span class="parameter" id="-param-flagsRatingLocked"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsRatingLocked</span>, </span><span class="parameter" id="-param-flagsDeleted"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">flagsDeleted</span>, </span><span class="parameter" id="-param-rating"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">rating</span>, </span><span class="parameter" id="-param-favCount"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">favCount</span>, </span><span class="parameter" id="-param-sources"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">sources</span>, </span><span class="parameter" id="-param-pools"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">pools</span>, </span><span class="parameter" id="-param-relationshipsParentId"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">relationshipsParentId</span>, </span><span class="parameter" id="-param-relationshipsHasChildren"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">relationshipsHasChildren</span>, </span><span class="parameter" id="-param-relationshipsHasActiveChildren"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">relationshipsHasActiveChildren</span>, </span><span class="parameter" id="-param-relationshipsChildren"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">relationshipsChildren</span>, </span><span class="parameter" id="-param-approverId"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">approverId</span>, </span><span class="parameter" id="-param-uploaderId"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">uploaderId</span>, </span><span class="parameter" id="-param-description"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">description</span>, </span><span class="parameter" id="-param-commentCount"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">commentCount</span>, </span><span class="parameter" id="-param-isFavorited"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isFavorited</span>}</span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+        <dt id="Post.fromMap" class="callable">
+          <span class="name"><a href="../e621/Post/Post.fromMap.html">Post.fromMap</a></span><span class="signature">(<span class="parameter" id="fromMap-param-map"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">map</span></span>)</span>
+        </dt>
+        <dd>
+          
+        </dd>
+    </dl>
+  </section>
+
+    <section class="summary offset-anchor" id="instance-properties">
+      <h2>Properties</h2>
+
+      <dl class="properties">
+        <dt id="approverId" class="property">
+  <span class="name"><a href="../e621/Post/approverId.html">approverId</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> 
+
+</dt>
+<dd>
+  The approver ID of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="changeSeq" class="property">
+  <span class="name"><a href="../e621/Post/changeSeq.html">changeSeq</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  An ID that increases for every post alteration on E6
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="commentCount" class="property">
+  <span class="name"><a href="../e621/Post/commentCount.html">commentCount</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  The comment count of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="createdAt" class="property">
+  <span class="name"><a href="../e621/Post/createdAt.html">createdAt</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  creation date of the post in ISO 8601 format
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="description" class="property">
+  <span class="name"><a href="../e621/Post/description.html">description</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  The description of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="favCount" class="property">
+  <span class="name"><a href="../e621/Post/favCount.html">favCount</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  The number of favorites of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="file" class="property">
+  <span class="name"><a href="../e621/Post/file.html">file</a></span>
+  <span class="signature">&#8594; _File</span> 
+
+</dt>
+<dd>
+  Meta of the image
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="flags" class="property">
+  <span class="name"><a href="../e621/Post/flags.html">flags</a></span>
+  <span class="signature">&#8594; _Flags</span> 
+
+</dt>
+<dd>
+  The flags of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property">
+  <span class="name"><a href="../e621/Post/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="id" class="property inherited">
+  <span class="name"><a href="../e621/Resource/id.html">id</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd class="inherited">
+  The ID of this resource.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isFavorited" class="property">
+  <span class="name"><a href="../e621/Post/isFavorited.html">isFavorited</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  If provided auth credentials, will return if the authenticated user has favorited the post or not.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="lockedTags" class="property">
+  <span class="name"><a href="../e621/Post/lockedTags.html">lockedTags</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  The locked tags of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="pools" class="property">
+  <span class="name"><a href="../e621/Post/pools.html">pools</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  The Pools of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="preview" class="property">
+  <span class="name"><a href="../e621/Post/preview.html">preview</a></span>
+  <span class="signature">&#8594; _Preview</span> 
+
+</dt>
+<dd>
+  The sample of the image
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="rating" class="property">
+  <span class="name"><a href="../e621/Post/rating.html">rating</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  The rating of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="relationships" class="property">
+  <span class="name"><a href="../e621/Post/relationships.html">relationships</a></span>
+  <span class="signature">&#8594; _Relationship</span> 
+
+</dt>
+<dd>
+  The relationships of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span> 
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="sample" class="property">
+  <span class="name"><a href="../e621/Post/sample.html">sample</a></span>
+  <span class="signature">&#8594; _Sample</span> 
+
+</dt>
+<dd>
+  The sample of the image
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="score" class="property">
+  <span class="name"><a href="../e621/Post/score.html">score</a></span>
+  <span class="signature">&#8594; _Score</span> 
+
+</dt>
+<dd>
+  The score of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="sources" class="property">
+  <span class="name"><a href="../e621/Post/sources.html">sources</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  The sources of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="tags" class="property">
+  <span class="name"><a href="../e621/Post/tags.html">tags</a></span>
+  <span class="signature">&#8594; _Tags</span> 
+
+</dt>
+<dd>
+  The tags of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="updatedAt" class="property">
+  <span class="name"><a href="../e621/Post/updatedAt.html">updatedAt</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  last update date of the post in ISO 8601 format
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="uploaderId" class="property">
+  <span class="name"><a href="../e621/Post/uploaderId.html">uploaderId</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  The uploader ID of the post
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+      </dl>
+    </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="copyWith" class="callable">
+  <span class="name"><a href="../e621/Post/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-createdAt">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">createdAt</span>, </span><span class="parameter" id="copyWith-param-updatedAt"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">updatedAt</span>, </span><span class="parameter" id="copyWith-param-fileWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">fileWidth</span>, </span><span class="parameter" id="copyWith-param-fileHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">fileHeight</span>, </span><span class="parameter" id="copyWith-param-fileExt"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileExt</span>, </span><span class="parameter" id="copyWith-param-fileSize"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">fileSize</span>, </span><span class="parameter" id="copyWith-param-fileMd5"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">fileMd5</span>, </span><span class="parameter" id="copyWith-param-fileUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">fileUrl</span>, </span><span class="parameter" id="copyWith-param-previewWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">previewWidth</span>, </span><span class="parameter" id="copyWith-param-previewHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">previewHeight</span>, </span><span class="parameter" id="copyWith-param-previewUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">previewUrl</span>, </span><span class="parameter" id="copyWith-param-sampleHas"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">sampleHas</span>, </span><span class="parameter" id="copyWith-param-sampleWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">sampleWidth</span>, </span><span class="parameter" id="copyWith-param-sampleHeight"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">sampleHeight</span>, </span><span class="parameter" id="copyWith-param-sampleUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a>?</span> <span class="parameter-name">sampleUrl</span>, </span><span class="parameter" id="copyWith-param-scoreUp"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">scoreUp</span>, </span><span class="parameter" id="copyWith-param-scoreDown"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">scoreDown</span>, </span><span class="parameter" id="copyWith-param-scoreTotal"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">scoreTotal</span>, </span><span class="parameter" id="copyWith-param-tagsGeneral"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsGeneral</span>, </span><span class="parameter" id="copyWith-param-tagsSpecies"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsSpecies</span>, </span><span class="parameter" id="copyWith-param-tagsCharacter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsCharacter</span>, </span><span class="parameter" id="copyWith-param-tagsArtist"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsArtist</span>, </span><span class="parameter" id="copyWith-param-tagsInvalid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsInvalid</span>, </span><span class="parameter" id="copyWith-param-tagsLore"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsLore</span>, </span><span class="parameter" id="copyWith-param-tagsMeta"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">tagsMeta</span>, </span><span class="parameter" id="copyWith-param-changeSeq"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">changeSeq</span>, </span><span class="parameter" id="copyWith-param-lockedTags"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">lockedTags</span>, </span><span class="parameter" id="copyWith-param-flagsPending"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsPending</span>, </span><span class="parameter" id="copyWith-param-flagsFlagged"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsFlagged</span>, </span><span class="parameter" id="copyWith-param-flagsNoteLocked"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsNoteLocked</span>, </span><span class="parameter" id="copyWith-param-flagsStatusLocked"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsStatusLocked</span>, </span><span class="parameter" id="copyWith-param-flagsRatingLocked"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsRatingLocked</span>, </span><span class="parameter" id="copyWith-param-flagsDeleted"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">flagsDeleted</span>, </span><span class="parameter" id="copyWith-param-rating"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">rating</span>, </span><span class="parameter" id="copyWith-param-favCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">favCount</span>, </span><span class="parameter" id="copyWith-param-sources"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">sources</span>, </span><span class="parameter" id="copyWith-param-pools"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">pools</span>, </span><span class="parameter" id="copyWith-param-relationshipsParentId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">relationshipsParentId</span>, </span><span class="parameter" id="copyWith-param-relationshipsHasChildren"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">relationshipsHasChildren</span>, </span><span class="parameter" id="copyWith-param-relationshipsHasActiveChildren"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">relationshipsHasActiveChildren</span>, </span><span class="parameter" id="copyWith-param-relationshipsChildren"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span>?</span> <span class="parameter-name">relationshipsChildren</span>, </span><span class="parameter" id="copyWith-param-approverId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">approverId</span>, </span><span class="parameter" id="copyWith-param-uploaderId"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">uploaderId</span>, </span><span class="parameter" id="copyWith-param-description"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">description</span>, </span><span class="parameter" id="copyWith-param-commentCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">commentCount</span>, </span><span class="parameter" id="copyWith-param-isFavorited"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">isFavorited</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="../e621/Post-class.html">Post</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Converts this resource to a map.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable">
+  <span class="name"><a href="../e621/Post/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  A string representation of this object.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable">
+  <span class="name"><a href="../e621/Post/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  The equality operator.
+  <div class="features"><span class="feature">override</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">e621</a></li>
+    <li><a href="../e621/e621-library.html">e621</a></li>
+    <li class="self-crumb">Post class</li>
+</ol>
+
+
+    <h5>e621 library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    e621
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

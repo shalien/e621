@@ -11,7 +11,7 @@ abstract base class Resource {
   const Resource({required this.id});
 
   /// Creates a resource from a map.
-  Resource.fromMap(Map<String, dynamic> map) : id = map['id'];
+  Resource._fromMap(Map<String, dynamic> map) : id = map['id'];
 
   /// Converts this resource to a map.
   @mustBeOverridden

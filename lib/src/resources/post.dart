@@ -1,6 +1,8 @@
 part of '../resource.dart';
 
 @immutable
+
+/// A post in the e621 API.
 final class Post extends Resource {
   /// creation date of the post in ISO 8601 format
   final String createdAt;
@@ -62,6 +64,7 @@ final class Post extends Resource {
   /// If provided auth credentials, will return if the authenticated user has favorited the post or not.
   final bool isFavorited;
 
+  @internal
   Post(
       {required super.id,
       required this.createdAt,
@@ -276,6 +279,7 @@ final class Post extends Resource {
   }
 
   @override
+  @internal
   Post.fromMap(super.map)
       : createdAt = map['created_at'],
         updatedAt = map['updated_at'],
@@ -297,7 +301,7 @@ final class Post extends Resource {
         description = map['description'],
         commentCount = map['comment_count'],
         isFavorited = map['is_favorited'],
-        super.fromMap();
+        super._fromMap();
 
   @override
   @mustCallSuper
