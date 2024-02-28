@@ -1,14 +1,23 @@
 part of '../data_access_object.dart';
 
-
 final class PostDataAccessObject extends DataAccessObject<Post> {
   const PostDataAccessObject(E621Client client) : super(client, 'posts');
 
+  /// Upload a file from a byte array.
+  /// - [file] is The file data encoded as a byte array.
+  /// - [tags] is a of list of tags.
+  /// - [source]  This will be used as the post's 'Source' text. Limit of ten URLs.
+  /// - [rating] is the rating for the post. Can be: [Rating.safe], [Rating.questionable] or [Rating.explicit].
+  /// - [description] is the description of the file.
+  /// - [parentId] is the parent ID of the file.
+  /// - [asPending] is whether the file should be pending.
+  /// - [filename] is the name of the file.
+  /// - [contentType] is the content type of the file (require [MediaType] from `http_parser` package.
   Future<({String location, int postId})> uploadFile({
     required List<int> file,
     required List<String> tags,
-    List<String?> source = const [],
-    String rating = 'e',
+    List<Uri?> source = const [],
+    Rating rating = Rating.explicit,
     String? description,
     int? parentId,
     bool? asPending,
@@ -21,13 +30,17 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
 
     final Uri uri = Uri.https(super.host, 'uploads.json');
 
+    if (source.isNotEmpty && source.length > 10) {
+      source = source.sublist(0, 10);
+    }
+
     final request = MultipartRequest('POST', uri)
       ..fields['upload[tag_string]'] = tags.join(' ')
       ..fields['upload[source]'] = source.join(Platform.lineTerminator)
-      ..fields['upload[rating]'] = rating
-      //  ..fields['description'] = description ?? ''
-      //  ..fields['parent_id'] = parentId?.toString() ?? ''
-      //  ..fields['as_pending'] = asPending?.toString() ?? ''
+      ..fields['upload[rating]'] = rating.toString()
+      ..fields['upload[description]'] = description ?? ''
+      ..fields['upload[parent_id]'] = parentId?.toString() ?? ''
+      ..fields['upload[as_pending]'] = asPending?.toString() ?? ''
       ..files.add(multipartFile);
 
     final response = await client.send(request);

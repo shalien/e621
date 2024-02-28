@@ -6,3 +6,4 @@ library;
 export 'src/e621_client.dart';
 export 'src/resource.dart';
 export 'src/data_access_object.dart';
+export 'src/utils/rating.dart';

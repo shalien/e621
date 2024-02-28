@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 
 import 'e621_client.dart';
 import 'resource.dart';
+import 'utils/rating.dart';
 
 part 'dao/post_data_access_object.dart';
 
