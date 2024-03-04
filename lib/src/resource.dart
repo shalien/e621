@@ -15,6 +15,7 @@ part 'resources/tag.dart';
 part 'resources/tag_alias.dart';
 part 'resources/tag_implication.dart';
 part 'resources/vote.dart';
+part 'resources/note.dart';
 
 /// A resource in the e621 API.
 abstract base class Resource {

@@ -17,6 +17,7 @@ part 'dao/tag_data_access_object.dart';
 part 'dao/tag_alias_data_access_object.dart';
 part 'dao/tag_implication_data_access_object.dart';
 part 'dao/vote_data_access_object.dart';
+part 'dao/note_data_access_object.dart';
 
 /// A data access object for the e621 API.
 abstract class DataAccessObject<T extends Resource> {
