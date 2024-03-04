@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
-import 'const.dart';
 import 'data_access_object.dart';
 
 /// A client for the e621 API.
@@ -26,6 +25,16 @@ class E621Client extends BaseClient {
 
   late final PostDataAccessObject posts;
 
+  late final FlagDataAccessObject flags;
+
+  late final VoteDataAccessObject votes;
+
+  late final TagDataAccessObject tags;
+
+  late final TagAliasDataAccessObject tagAliases;
+
+  late final FavoriteDataAccessObject favorites;
+
   /// Creates a new [E621Client].
   ///  - [host] is the base URL of the e621 API.
   ///  - [userAgent] is the user agent to use for requests.
@@ -34,6 +43,11 @@ class E621Client extends BaseClient {
       {this.userAgent, Client? client})
       : _inner = client ?? Client() {
     posts = PostDataAccessObject(this);
+    flags = FlagDataAccessObject(this);
+    votes = VoteDataAccessObject(this);
+    tags = TagDataAccessObject(this);
+    tagAliases = TagAliasDataAccessObject(this);
+    favorites = FavoriteDataAccessObject(this);
   }
 
   /// Sends a request and returns a streamed response.
@@ -41,8 +55,8 @@ class E621Client extends BaseClient {
   /// Will automatically add the user agent and authorization headers to every request the request.
   /// - Returns a streamed response.
   @override
-  Future<StreamedResponse> send(BaseRequest request) {
-    request.headers['User-Agent'] = userAgent ?? defaultUserAgent;
+  Future<StreamedResponse> send(BaseRequest request) async {
+    //  request.headers['User-Agent'] = userAgent ?? defaultUserAgent;
     request.headers['Authorization'] = _generateAuthHeader();
 
     return _inner.send(request);

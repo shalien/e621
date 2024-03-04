@@ -15,86 +15,75 @@ void main() {
       client = E621Client(Uri.parse(env.first), env[1], env[2]);
     });
 
-    test('Upload File', () async {
-      File file = File('test/uploads/dragon.png');
-
+    test('Create a post from file', () async {
       if (client == null) {
-        fail('Client is null');
+        throw Exception('Client is null');
       }
 
-      var response = await client!.posts.uploadFile(
-          file: file.readAsBytesSync(),
-          tags: ['test'],
-          filename: file.path.split('/').last,
-          contentType: MediaType('image', 'png'),
-          asPending: true);
+      final File file = File('test/resources/test.jpg');
+      if (!file.existsSync()) {
+        throw Exception('File does not exist');
+      }
 
-      print('${client!.host.host} - ${response.location} - ${response.postId}');
+      final response = await client!.posts.createFromFile(
+        file: file.readAsBytesSync(),
+        contentType: MediaType('image', 'jpeg'),
+        tags: ['test'],
+        rating: PostRating.explicit,
+      );
+
       expect(response.location, isNotEmpty);
-      expect(response.postId, greaterThan(0));
-      // Test code
-    });
+      expect(response.postId, isNotNull);
+      expect(response.postId, isA<int>());
+    }, skip: 'Unable to test without a test website');
 
-    test('Update Post', () {
-      // Test code
-    });
-
-    test('Delete Post', () {
-      // Test code
-    });
-
-    test('Get Post', () {
-      // Test code
-    });
-
-    test('Get All Post', () async {
+    test('Create a fil from Url', () async {
       if (client == null) {
-        fail('Client is null');
+        throw Exception('Client is null');
       }
 
-      List<Post> posts = await client!.posts.index();
+      final response = await client!.posts.createFromUrl(
+        file: Uri.parse(
+            'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'),
+        tags: ['test'],
+        rating: PostRating.explicit,
+      );
 
-      print('${client!.host.host} -  ${posts.length}');
-      expect(posts.length, greaterThan(0));
-    });
+      expect(response.location, isNotEmpty);
+      expect(response.postId, isNotNull);
+      expect(response.postId, isA<int>());
+    }, skip: 'Unable to test without a test website');
+  });
 
-    test('Get All Post - Tag - Dasa', () async {
-      if (client == null) {
-        fail('Client is null');
-      }
+  test('Update a post', () async {
+    if (client == null) {
+      throw Exception('Client is null');
+    }
 
-      List<String> tags = ['dasa'];
+    final response = await client!.posts.update(
+      id: 1,
+      editReason: "Test",
+    );
 
-      List<Post> posts = await client!.posts.index(tags: tags);
+    expect(response, isNotNull);
+    expect(response, true);
+  }, skip: 'Unable to test without a test website');
 
-      print('${client!.host.host} - KW : ${tags.join(' ')} - ${posts.length}');
-      expect(posts.length, greaterThan(0));
-    });
+  test('List posts', () async {
+    if (client == null) {
+      throw Exception('Client is null');
+    }
 
-    test('Get All Post - Tags - Anal + Trans', () async {
-      if (client == null) {
-        fail('Client is null');
-      }
+    final response = await client!.posts.list(
+      limit: 1,
+    );
 
-      List<String> tags = ['anal', 'trans'];
+    expect(response, isNotNull);
+    expect(response, isNotEmpty);
+    expect(response.length, 1);
+  });
 
-      List<Post> posts = await client!.posts.index(tags: tags);
-
-      print('${client!.host.host} - KW : ${tags.join(' ')} - ${posts.length}');
-      expect(posts.length, greaterThan(0));
-    });
-
-    test('Get All Post - Tags - Anal + Dasa', () async {
-      if (client == null) {
-        fail('Client is null');
-      }
-
-      List<String> tags = ['anal', 'dasa'];
-
-      List<Post> posts = await client!.posts.index(tags: tags);
-
-      print('${client!.host.host} - KW : ${tags.join(' ')} - ${posts.length}');
-      expect(posts.length, greaterThan(0));
-    });
+  tearDown(() {
+    client?.close();
   });
 }
