@@ -1,10 +1,7 @@
-
-
 part of '../resource.dart';
 
 /// A note on a post.
 final class Note extends Resource {
-
   /// he time the note was created in the format of `YYYY-MM-DDTHH:MM:SS.MS+00:00`.
   final String createdAt;
 
@@ -41,7 +38,7 @@ final class Note extends Resource {
   /// The name of the user that created the note.
   final String creatorName;
 
-/// Creates a note.
+  /// Creates a note.
   const Note({
     required super.id,
     required this.createdAt,
@@ -58,22 +55,21 @@ final class Note extends Resource {
     required this.creatorName,
   });
 
-
   /// Creates a note from a map.
-  Note.fromMap(Map <String, dynamic> map) :
-    createdAt = map['created_at'],
-    updatedAt = map['updated_at'],
-    creatorId = map['creator_id'],
-    x = map['x'],
-    y = map['y'],
-    width = map['width'],
-    height = map['height'],
-    version = map['version'],
-    isActive = map['is_active'],
-    postId = map['post_id'],
-    body = map['body'],
-    creatorName = map['creator_name'],
-    super(id: map['id']);
+  Note.fromMap(Map<String, dynamic> map)
+      : createdAt = map['created_at'],
+        updatedAt = map['updated_at'],
+        creatorId = map['creator_id'],
+        x = map['x'],
+        y = map['y'],
+        width = map['width'],
+        height = map['height'],
+        version = map['version'],
+        isActive = map['is_active'],
+        postId = map['post_id'],
+        body = map['body'],
+        creatorName = map['creator_name'],
+        super(id: map['id']);
 
   @override
   bool operator ==(Object other) {
@@ -95,7 +91,7 @@ final class Note extends Resource {
     int? postId,
     String? body,
     String? creatorName,
-}) {
+  }) {
     return Note(
       id: id,
       createdAt: createdAt ?? this.createdAt,
@@ -114,11 +110,23 @@ final class Note extends Resource {
   }
 
   @override
-  int get hashCode => id.hashCode ^ createdAt.hashCode ^ updatedAt.hashCode ^ creatorId.hashCode ^ x.hashCode ^ y.hashCode ^ width.hashCode ^ height.hashCode ^ version.hashCode ^ isActive.hashCode ^ postId.hashCode ^ body.hashCode ^ creatorName.hashCode;
+  int get hashCode =>
+      id.hashCode ^
+      createdAt.hashCode ^
+      updatedAt.hashCode ^
+      creatorId.hashCode ^
+      x.hashCode ^
+      y.hashCode ^
+      width.hashCode ^
+      height.hashCode ^
+      version.hashCode ^
+      isActive.hashCode ^
+      postId.hashCode ^
+      body.hashCode ^
+      creatorName.hashCode;
 
   @override
   String toString() {
     return 'Note{id: $id, createdAt: $createdAt, updatedAt: $updatedAt, creatorId: $creatorId, x: $x, y: $y, width: $width, height: $height, version: $version, isActive: $isActive, postId: $postId, body: $body, creatorName: $creatorName}';
   }
-
 }
