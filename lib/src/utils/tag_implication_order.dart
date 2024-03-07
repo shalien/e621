@@ -1,17 +1,17 @@
 /// An enum for the order of tag Implications.
 enum TagImplicationOrder {
-  status._(value: 'status'),
-  createdAt._(value: 'created_at'),
-  updatedAt._(value: 'updated_at'),
-  name._(value: 'name'),
-  postCount._(value: 'post_count');
+  status._('status'),
+  createdAt._('created_at'),
+  updatedAt._('updated_at'),
+  name._('name'),
+  postCount._('post_count');
 
   /// The value of the enum.
-  final String value;
+  final String _value;
 
   /// Creates a new [TagImplicationOrder].
-  const TagImplicationOrder._({required this.value});
+  const TagImplicationOrder._(this._value);
 
   @override
-  String toString() => value;
+  String toString() => _value;
 }

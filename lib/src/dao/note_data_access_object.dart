@@ -137,8 +137,8 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
   }
 
   Future<bool> revert({required int postId, required int versionId}) async {
-    final Uri uri = Uri.https(
-        client.host.host, '$_endpoint/$postId/revert.json');
+    final Uri uri =
+        Uri.https(client.host.host, '$_endpoint/$postId/revert.json');
     final Map<String, dynamic> requestBody = {
       'version_id': versionId,
     };
@@ -157,7 +157,6 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
 
     return true;
   }
-
 
   @override
   Note fromJson(Map<String, dynamic> json) {

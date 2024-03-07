@@ -8,6 +8,7 @@ import 'resources/post/relationship.dart';
 import 'resources/post/sample.dart';
 import 'resources/post/score.dart';
 import 'resources/post/tags.dart';
+import 'utils/pool_category.dart';
 
 part 'resources/flag.dart';
 part 'resources/post.dart';
@@ -16,6 +17,7 @@ part 'resources/tag_alias.dart';
 part 'resources/tag_implication.dart';
 part 'resources/vote.dart';
 part 'resources/note.dart';
+part 'resources/pool.dart';
 
 /// A resource in the e621 API.
 abstract base class Resource {
@@ -30,7 +32,7 @@ abstract base class Resource {
 
   /// Converts this resource to a map.
   @mustBeOverridden
-  copyWith();
+  Resource copyWith();
 
   @override
   @mustBeOverridden
