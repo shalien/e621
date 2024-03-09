@@ -15,13 +15,23 @@ include: package:lints/recommended.yaml
 
 # Uncomment the following section to specify additional rules.
 
-# linter:
-#   rules:
-#     - camel_case_types
+linter:
+   rules:
+     - camel_case_types
+     - prefer_spread_collections
+     - annotate_overrides
+     - annotate_redeclares
+     - always_declare_return_types
+     - matching_super_parameters
+     - prefer_constructors_over_static_methods
+     - prefer_if_null_operators
+     - prefer_for_elements_to_map_fromIterable
+     - prefer_relative_imports
 
-# analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+analyzer:
+  exclude:
+    - .idea/**
+    - .vscode/**
 
 # For more information about the core and recommended set of lints, see
 # https://dart.dev/go/core-lints

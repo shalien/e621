@@ -12,7 +12,12 @@ void main() {
     setUp(() {
       List<String> env = File('.env.test').readAsLinesSync();
 
-      client = E621Client(Uri.parse(env.first), env[1], env[2]);
+      client = E621Client(
+        host: Uri.parse(env.first),
+        login: env[1],
+        apiKey: env[2],
+        userAgent: 'E621 Dart Libray Test 0.0.1',
+      );
     });
 
     test('Create a post from file', () async {
@@ -53,37 +58,37 @@ void main() {
       expect(response.postId, isNotNull);
       expect(response.postId, isA<int>());
     }, skip: 'Unable to test without a test website');
-  });
 
-  test('Update a post', () async {
-    if (client == null) {
-      throw Exception('Client is null');
-    }
+    test('Update a post', () async {
+      if (client == null) {
+        throw Exception('Client is null');
+      }
 
-    final response = await client!.posts.update(
-      id: 1,
-      editReason: "Test",
-    );
+      final response = await client!.posts.update(
+        id: 1,
+        editReason: "Test",
+      );
 
-    expect(response, isNotNull);
-    expect(response, true);
-  }, skip: 'Unable to test without a test website');
+      expect(response, isNotNull);
+      expect(response, true);
+    }, skip: 'Unable to test without a test website');
 
-  test('List posts', () async {
-    if (client == null) {
-      throw Exception('Client is null');
-    }
+    test('List posts', () async {
+      if (client == null) {
+        throw Exception('Client is null');
+      }
 
-    final response = await client!.posts.list(
-      limit: 1,
-    );
+      final response = await client!.posts.list(
+        limit: 1,
+      );
 
-    expect(response, isNotNull);
-    expect(response, isNotEmpty);
-    expect(response.length, 1);
-  });
+      expect(response, isNotNull);
+      expect(response, isNotEmpty);
+      expect(response.length, 1);
+    });
 
-  tearDown(() {
-    client?.close();
+    tearDown(() {
+      client?.close();
+    });
   });
 }

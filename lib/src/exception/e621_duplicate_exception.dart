@@ -1,4 +1,4 @@
-import 'package:e621/src/exception/e621_exception.dart';
+import 'e621_exception.dart';
 import 'package:meta/meta.dart';
 
 @immutable

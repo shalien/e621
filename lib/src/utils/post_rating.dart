@@ -1,4 +1,3 @@
-
 /// Represents the rating of a post.
 enum PostRating {
   safe._('s'),

@@ -1,17 +1,18 @@
 part of '../data_access_object.dart';
 
+/// Allow to interact with notes.
 final class NoteDataAccessObject extends DataAccessObject<Note> {
   /// Creates a new [NoteDataAccessObject].
   const NoteDataAccessObject(E621Client client) : super(client, 'notes');
 
-  /// Returns a list of notes.
-  /// - [bodyMatches]: A note body expression to match against, which can include `*` as a wildcard.
-  /// - [postId]: The ID of the post the note is on.
-  /// - [postTagsMatch]: The note's post's tags match the given terms. Meta-tags are not supported.
-  /// - [creatorName]: The creator's name. Exact match.
-  /// - [creatorId]: The creator's ID.
-  /// - [isActive]: Whether the note is active.
-  /// - [limit]: The limit of the number of notes to return.
+  /// Returns a list of [Note]s.
+  /// [bodyMatches]: A note body expression to match against, which can include `*` as a wildcard.
+  /// [postId]: The ID of the [Post] the [Note] is on.
+  /// [postTagsMatch]: The note's post's tags match the given terms. Meta-tags are not supported.
+  /// [creatorName]: The creator's name. Exact match.
+  /// [creatorId]: The creator's ID.
+  /// [isActive]: Whether the note is active.
+  /// [limit]: The limit of the number of notes to return.
   Future<List<Note>> list({
     String? bodyMatches,
     int? postId,
@@ -52,7 +53,14 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
     }
   }
 
-  Future<Post> create({
+  /// Creates a new [Note] on a [Post] using it's [postId].
+  /// [postId] The [Post.id] of the [Post] you want to add a [Note] to.
+  /// [x] he X coordinate of the top left corner of the [Note] in pixels from the top left of the [Post]
+  /// [y] The Y coordinate of the top left corner of the [Note] in pixels from the top left of the [Post]
+  /// [width] The width of the box for the [Note].
+  /// [height] The height of the box for the [Note].
+  /// [body] The content of the [Note].
+  Future<Note> create({
     required int postId,
     required int x,
     required int y,
@@ -60,13 +68,14 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
     required int height,
     required String body,
   }) async {
-    final Uri uri = Uri.https(client.host.host, '$_endpoint/$postId.json');
+    final Uri uri = Uri.https(host, '$_endpoint.json');
     // every request field should be encased in note[] array
     final Map<String, dynamic> requestBody = {
-      'note[x]': x,
-      'note[y]': y,
-      'note[width]': width,
-      'note[height]': height,
+      'note[post_id]': postId.toString(),
+      'note[x]': x.toString(),
+      'note[y]': y.toString(),
+      'note[width]': width.toString(),
+      'note[height]': height.toString(),
       'note[body]': body,
     };
 
@@ -80,13 +89,20 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
 
     if (response.statusCode == HttpStatus.created ||
         response.statusCode == HttpStatus.ok) {
-      return Post.fromMap(jsonDecode(response.body));
+      return fromJson(jsonDecode(response.body));
     } else {
       throw E621Exception.fromResponse(response);
     }
   }
 
-  Future<Post> update({
+  /// Updates a [Note] using it's [id].
+  /// [id] The [Note.id] of the [Note] you want to update.
+  /// [x] he X coordinate of the top left corner of the [Note] in pixels from the top left of the [Post]
+  /// [y] The Y coordinate of the top left corner of the [Note] in pixels from the top left of the [Post]
+  /// [width] The width of the box for the [Note].
+  /// [height] The height of the box for the [Note].
+  /// [body] The content of the [Note].
+  Future<Note> update({
     required int id,
     required int x,
     required int y,
@@ -97,10 +113,10 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
     final Uri uri = Uri.https(client.host.host, '$_endpoint/$id.json');
     // every request field should be encased in note[] array
     final Map<String, dynamic> requestBody = {
-      'note[x]': x,
-      'note[y]': y,
-      'note[width]': width,
-      'note[height]': height,
+      'note[x]': x.toString(),
+      'note[y]': y.toString(),
+      'note[width]': width.toString(),
+      'note[height]': height.toString(),
       'note[body]': body,
     };
 
@@ -113,14 +129,16 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
     }
 
     if (response.statusCode == HttpStatus.ok) {
-      return Post.fromMap(jsonDecode(response.body));
+      return fromJson(jsonDecode(response.body));
     } else {
       throw E621Exception.fromResponse(response);
     }
   }
 
-  Future<bool> delete({required int postId}) async {
-    final Uri uri = Uri.https(client.host.host, '$_endpoint/$postId.json');
+  /// Deletes a [Note] using it's [id].
+  /// [id] The [Note.id] of the [Note] you want to delete.
+  Future<bool> delete({required int id}) async {
+    final Uri uri = Uri.https(client.host.host, '$_endpoint/$id.json');
     final Response response;
 
     try {
@@ -136,11 +154,13 @@ final class NoteDataAccessObject extends DataAccessObject<Note> {
     return true;
   }
 
-  Future<bool> revert({required int postId, required int versionId}) async {
-    final Uri uri =
-        Uri.https(client.host.host, '$_endpoint/$postId/revert.json');
+  /// Reverts a [Note] to a previous version.
+  /// [id] The [Note.id] of the [Note] you want to revert.
+  /// [versionId] The version to revert to.
+  Future<bool> revert({required int id, required int versionId}) async {
+    final Uri uri = Uri.https(client.host.host, '$_endpoint/$id/revert.json');
     final Map<String, dynamic> requestBody = {
-      'version_id': versionId,
+      'version_id': versionId.toString(),
     };
 
     final Response response;

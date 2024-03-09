@@ -35,7 +35,7 @@ final class Vote extends Resource {
         up = map['up'],
         down = map['down'],
         ourScore = map['our_score'],
-        super._fromMap(map);
+        super(id: 0);
 
   @override
   bool operator ==(Object other) {

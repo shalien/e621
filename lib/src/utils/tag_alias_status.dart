@@ -1,4 +1,3 @@
-
 /// Represents the status of a tag alias.
 enum TagAliasStatus {
   approved._('approved'),

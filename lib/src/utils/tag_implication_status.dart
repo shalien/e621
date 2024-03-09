@@ -1,4 +1,3 @@
-
 /// Represents the status of a tag Implication.
 enum TagImplicationStatus {
   approved._('approved'),

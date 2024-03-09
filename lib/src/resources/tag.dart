@@ -51,7 +51,7 @@ final class Tag extends Resource {
   Tag.fromMap(Map<String, dynamic> map)
       : name = map['name'],
         postCount = map['post_count'],
-        relatedTags = map['related_tags'],
+        relatedTags = (map['related_tags'] as String).split(' '),
         relatedTagsUpdatedAt = map['related_tags_updated_at'],
         category = map['category'],
         isLocked = map['is_locked'],

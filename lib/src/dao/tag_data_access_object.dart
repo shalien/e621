@@ -52,18 +52,22 @@ final class TagDataAccessObject extends DataAccessObject<Tag> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception(
           message: response.body,
           statusCode: response.statusCode,
           reasonPhrase: response.reasonPhrase);
     }
 
-    final List<dynamic> json = jsonDecode(response.body);
+    final decoded = jsonDecode(response.body);
 
-    return json
-        .map((dynamic e) => fromJson(e as Map<String, dynamic>))
-        .toList();
+    if (decoded is List) {
+      return decoded
+          .map((dynamic e) => fromJson(e as Map<String, dynamic>))
+          .toList();
+    } else {
+      return const [];
+    }
   }
 
   @override

@@ -7,11 +7,11 @@ final class FlagDataAccessObject extends DataAccessObject<Flag> {
   /// Creates a new [FlagDataAccessObject].
   const FlagDataAccessObject(E621Client client) : super(client, 'post_flags');
 
-  /// Returns a list of flags.
-  /// List maybe empty if no flags are found.
-  /// - [postId] is the ID of the post to search for.
-  /// - [creatorId] is the ID of the creator to search for.
-  /// - [creatorName] is the name of the creator to search for.
+  /// Returns a list of [Flag]s.
+  /// List maybe empty if no [Flag]s are found.
+  /// [postId] is the ID of the [Post] to search for.
+  /// [creatorId] is the ID of the creator to search for.
+  /// [creatorName] is the name of the creator to search for.
   Future<List<Flag>> list(
       {int? postId, int? creatorId, String? creatorName}) async {
     final Map<String, String> queryParameters = {
@@ -32,7 +32,7 @@ final class FlagDataAccessObject extends DataAccessObject<Flag> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception(
           message: response.body,
           statusCode: response.statusCode,
@@ -46,11 +46,10 @@ final class FlagDataAccessObject extends DataAccessObject<Flag> {
         .toList();
   }
 
-  /// Creates a new flag.
-  /// - [postId] is the ID of the post to flag.
-  /// - [reason] is the reason for the flag.
-  /// - [parentId] is the  ID of the superior post when flagging an image as inferior.
-  ///  Will return the created flag.
+  /// Creates a new [Flag].
+  /// [postId] is the ID of the [Post] to [Flag].
+  /// [reason] is the reason for the [Flag].
+  /// [parentId] is the  ID of the superior post when flagging an image as inferior.
   Future<Flag> create(
       {required int postId, required String reason, int? parentId}) async {
     final Uri uri = Uri.https(super.host, '$_endpoint.json');
@@ -69,7 +68,7 @@ final class FlagDataAccessObject extends DataAccessObject<Flag> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception.fromResponse(response);
     }
 

@@ -57,9 +57,9 @@ final class TagImplicationDataAccessObject
       ...(creatorName != null) ? {'search[creator_name]': creatorName} : {},
       ...(approverName != null) ? {'search[approver_name]': approverName} : {},
       ...(status != null) ? {'search[status]': status} : {},
-      ...(order != null) ? {'order': order} : {},
+      ...(order != null) ? {'order': order.toString()} : {},
       ...(limit != null) ? {'limit': limit.toString()} : {},
-      ...(page != null) ? {'page': page} : {},
+      ...(page != null) ? {'page': page.toString()} : {},
     });
 
     final Response response;
@@ -70,7 +70,7 @@ final class TagImplicationDataAccessObject
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception.fromResponse(response);
     }
 

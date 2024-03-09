@@ -14,7 +14,7 @@ final class TagImplication extends Resource {
   final String consequentName;
 
   /// The count of posts
-  final int postCount;
+  final int? postCount;
 
   /// The reason for the tag alias
   final String reason;
@@ -23,7 +23,7 @@ final class TagImplication extends Resource {
   final int creatorId;
 
   /// The approver ID of the tag alias
-  final int approverId;
+  final int? approverId;
 
   /// The creation time of the tag alias
   final String createdAt;
@@ -32,10 +32,10 @@ final class TagImplication extends Resource {
   final String updatedAt;
 
   /// The forum post ID of the tag alias
-  final int forumPostId;
+  final int? forumPostId;
 
   /// The forum topic of the tag alias
-  final int forumTopic;
+  final int? forumTopic;
 
   /// Creates a new [TagImplication].
   const TagImplication(
@@ -85,7 +85,7 @@ final class TagImplication extends Resource {
   }
 
   @override
-  copyWith({
+  TagImplication copyWith({
     String? status,
     String? antecedentName,
     String? consequentName,

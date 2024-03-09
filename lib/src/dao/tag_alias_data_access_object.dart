@@ -33,22 +33,30 @@ final class TagAliasDataAccessObject extends DataAccessObject<TagAlias> {
       String? page}) async {
     // all request field except limit and page should be encased in search[] array
     final Uri uri = Uri.https(client.host.host, '$_endpoint.json', {
-      if (nameMatches != null) 'search[name_matches]': nameMatches,
-      if (antecedentName != null)
-        'search[antecedent_name]': antecedentName.join(','),
-      if (consequentName != null)
-        'search[consequent_name]': consequentName.join(','),
-      if (antecedentTagCategory != null)
-        'search[antecedent_tag_category]':
-            antecedentTagCategory.map((e) => e).join(','),
-      if (consequentTagCategory != null)
-        'search[consequent_tag_category]':
-            consequentTagCategory.map((e) => e).join(','),
-      if (creatorName != null) 'search[creator_name]': creatorName,
-      if (approverName != null) 'search[approver_name]': approverName,
-      if (status != null) 'search[status]': status,
-      if (limit != null) 'limit': limit.toString(),
-      if (page != null) 'page': page,
+      ...(nameMatches != null) ? {'search[name_matches]': nameMatches} : {},
+      ...(antecedentName != null)
+          ? {'search[antecedent_name]': antecedentName.join(',')}
+          : {},
+      ...(consequentName != null)
+          ? {'search[consequent_name]': consequentName.join(',')}
+          : {},
+      ...(antecedentTagCategory != null)
+          ? {
+              'search[antecedent_tag_category]':
+                  antecedentTagCategory.map((e) => e).join(',')
+            }
+          : {},
+      ...(consequentTagCategory != null)
+          ? {
+              'search[consequent_tag_category]':
+                  consequentTagCategory.map((e) => e).join(',')
+            }
+          : {},
+      ...(creatorName != null) ? {'search[creator_name]': creatorName} : {},
+      ...(approverName != null) ? {'search[approver_name]': approverName} : {},
+      ...(status != null) ? {'search[status]': status.toString()} : {},
+      ...(limit != null) ? {'limit': limit.toString()} : {},
+      ...(page != null) ? {'page': page.toString()} : {},
     });
 
     final Response response;
@@ -59,7 +67,7 @@ final class TagAliasDataAccessObject extends DataAccessObject<TagAlias> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception.fromResponse(response);
     }
 

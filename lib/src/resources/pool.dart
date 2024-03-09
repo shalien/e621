@@ -1,5 +1,6 @@
 part of '../resource.dart';
 
+///
 final class Pool extends Resource {
   /// Name of the pool.
   final String name;
@@ -11,7 +12,7 @@ final class Pool extends Resource {
   final String updatedAt;
 
   /// The ID of the creator of the pool.
-  final String creatorId;
+  final int creatorId;
 
   /// The description of the pool.
   final String description;
@@ -20,7 +21,7 @@ final class Pool extends Resource {
   final bool isActive;
 
   /// The category of the pool.
-  final PoolCategory category;
+  final String category;
 
   /// The list of post IDs in the pool.
   final List<int> postIds;
@@ -46,6 +47,20 @@ final class Pool extends Resource {
     required this.postCount,
   });
 
+  /// Creates a [Pool] from a map.
+  Pool.fromMap(super.map)
+      : name = map['name'],
+        createdAt = map['created_at'],
+        updatedAt = map['updated_at'],
+        creatorId = map['creator_id'],
+        description = map['description'],
+        isActive = map['is_active'],
+        category = map['category'],
+        postIds = List<int>.from(map['post_ids']),
+        creatorName = map['creator_name'],
+        postCount = map['post_count'],
+        super._fromMap();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -69,7 +84,7 @@ final class Pool extends Resource {
     String? name,
     String? createdAt,
     String? updatedAt,
-    String? creatorId,
+    int? creatorId,
     String? description,
     bool? isActive,
     PoolCategory? category,
@@ -85,7 +100,7 @@ final class Pool extends Resource {
       creatorId: creatorId ?? this.creatorId,
       description: description ?? this.description,
       isActive: isActive ?? this.isActive,
-      category: category ?? this.category,
+      category: category == null ? this.category : category.toString(),
       postIds: postIds ?? this.postIds,
       creatorName: creatorName ?? this.creatorName,
       postCount: postCount ?? this.postCount,

@@ -1,4 +1,3 @@
-
 /// A [TagCategory] linked to [Tag].
 enum TagCategory {
   general._(0),

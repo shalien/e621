@@ -24,11 +24,11 @@ final class Flag extends Resource {
   final bool isDeletion;
 
   /// The category of the flag.
-  final String category;
+  final String? category;
 
   /// THIS TYPE WASN'T IN THE API DOCUMENTATION
   /// Added after api testing
-  String get type => category;
+  String? get type => category;
 
   /// Creates a new [Flag].
   const Flag(
@@ -50,7 +50,7 @@ final class Flag extends Resource {
         isResolved = map['is_resolved'],
         updatedAt = map['updated_at'],
         isDeletion = map['is_deletion'],
-        category = map['category'],
+        category = map['type'],
         creatorId = map['creator_id'],
         super._fromMap(map);
 

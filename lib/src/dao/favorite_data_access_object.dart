@@ -10,7 +10,7 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
 
   /// Returns a list of favorites [Post].
   /// List maybe empty if no favorites [Post] are found.
-  /// - [userId] is the user to fetch the favorites from.
+  /// [userId] is the user to fetch the favorites from.
   /// If not specified will fetch the favorites from the currently authorized user.
   Future<List<Post>> list({int? userId}) async {
     final Uri uri = Uri.https(super.host, '$_endpoint.json', {
@@ -25,7 +25,7 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception(
           message: response.body,
           statusCode: response.statusCode,
@@ -41,7 +41,7 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
   }
 
   /// Creates a new favorite.
-  /// - [postId] is the ID of the post to favorite.
+  /// [postId] is the ID of the post to favorite.
   Future<Post> create({required int postId}) async {
     final Uri uri = Uri.https(super.host, '$_endpoint.json');
 
@@ -57,7 +57,7 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.created) {
       throw E621Exception(
           message: response.body,
           statusCode: response.statusCode,
@@ -71,7 +71,7 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
   }
 
   /// Deletes a favorite.
-  /// - [postId] is the ID of the [Post]] to delete the favorite from.
+  /// [postId] is the ID of the [Post]] to delete the favorite from.
   Future<bool> delete({required int postId}) async {
     final Uri uri = Uri.https(super.host, '$_endpoint/$postId.json');
 
@@ -83,11 +83,11 @@ final class FavoriteDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200 && response.statusCode != 204) {
+    if (response.statusCode != HttpStatus.noContent) {
       throw E621Exception.fromResponse(response);
     }
 
-    return response.statusCode == 204;
+    return true;
   }
 
   @override

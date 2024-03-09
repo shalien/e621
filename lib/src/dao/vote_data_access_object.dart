@@ -26,7 +26,7 @@ final class VoteDataAccessObject extends DataAccessObject<Vote> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       switch (response.statusCode) {
         case 422:
           throw E621DuplicateException(

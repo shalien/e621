@@ -22,7 +22,7 @@ final class TagAlias extends Resource {
   final int creatorId;
 
   /// The approver ID of the tag alias
-  final int approverId;
+  final int? approverId;
 
   /// The creation time of the tag alias
   final String createdAt;
@@ -34,7 +34,7 @@ final class TagAlias extends Resource {
   final int forumPostId;
 
   /// The forum topic of the tag alias
-  final int forumTopic;
+  final int? forumTopic;
 
   /// Creates a new [TagAlias].
   const TagAlias(
@@ -84,7 +84,7 @@ final class TagAlias extends Resource {
   }
 
   @override
-  copyWith({
+  TagAlias copyWith({
     String? status,
     String? antecedentName,
     String? consequentName,

@@ -50,7 +50,7 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       switch (response.statusCode) {
         case 422:
           throw E621DuplicateException(
@@ -121,7 +121,7 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       switch (response.statusCode) {
         case 422:
           throw E621DuplicateException(
@@ -207,11 +207,12 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200 && response.statusCode != 204) {
+    if (response.statusCode != HttpStatus.ok &&
+        response.statusCode != HttpStatus.created) {
       throw E621Exception.fromResponse(response);
     }
 
-    return response.statusCode == 204;
+    return true;
   }
 
   /// Gets a listing of posts
@@ -242,7 +243,7 @@ final class PostDataAccessObject extends DataAccessObject<Post> {
       rethrow;
     }
 
-    if (response.statusCode != 200) {
+    if (response.statusCode != HttpStatus.ok) {
       throw E621Exception.fromResponse(response);
     }
 
