@@ -1,6 +1,6 @@
 part of '../resource.dart';
 
-///
+/// A [Pool] of [Post]s.
 final class Pool extends Resource {
   /// Name of the pool.
   final String name;

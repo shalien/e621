@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// The relationships of a post.
+/// The [Post.relationship] of a [Post].
 final class Relationship {
   /// The ID of the parent post.
   final int? parentId;

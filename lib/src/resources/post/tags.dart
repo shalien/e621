@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @immutable
 @internal
 
-/// The tags of a post.
+/// The [Post.tags] of a [Post].
 final class Tags {
   /// The general tags of the post.
   final List<String> general;

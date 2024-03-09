@@ -1,6 +1,8 @@
 part of '../resource.dart';
 
 @immutable
+
+/// A [Tag] on a [Post].
 final class Tag extends Resource {
   /// Tag display name
   final String name;

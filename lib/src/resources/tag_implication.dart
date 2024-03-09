@@ -2,7 +2,7 @@ part of '../resource.dart';
 
 @immutable
 
-/// A tag implication in the e621 API.
+/// A [TagImplication] for a given [Tag].
 final class TagImplication extends Resource {
   /// The status of the tag alias
   final String status;

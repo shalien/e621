@@ -8,9 +8,5 @@ import 'package:meta/meta.dart';
 final class E621DuplicateException extends E621Exception {
   /// Creates a new [E621DuplicateException].
   const E621DuplicateException(
-      {required String message, required int statusCode, String? reasonPhrase})
-      : super(
-            message: message,
-            statusCode: statusCode,
-            reasonPhrase: reasonPhrase);
+      {required super.message, required super.statusCode, super.reasonPhrase});
 }

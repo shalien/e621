@@ -1,6 +1,6 @@
 part of '../resource.dart';
 
-/// A note on a post.
+/// A [Note] on a [Post].
 final class Note extends Resource {
   /// he time the note was created in the format of `YYYY-MM-DDTHH:MM:SS.MS+00:00`.
   final String createdAt;

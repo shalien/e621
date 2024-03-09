@@ -161,7 +161,7 @@ final class PoolDataAccessObject extends DataAccessObject<Pool> {
 
   /// Revert a pool to [version].
   /// [id] - The ID of the pool to revert.
-  /// [version] - The version to revert to.
+  /// [versionId] - The version to revert to.
   Future<bool> revert({required int id, required int versionId}) async {
     final Uri uri = Uri.https(
       host,

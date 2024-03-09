@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// A File subpart of a post.
+/// A [Post.file] subpart of a [Post].
 final class File {
   /// The width of the file in pixels.
   final int width;

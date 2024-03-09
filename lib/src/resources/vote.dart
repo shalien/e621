@@ -3,7 +3,7 @@ part of '../resource.dart';
 @immutable
 
 /// A vote in the e621 API.
-/// Since [Vote] aren't really resources [id]] is always 0.
+/// Since [Vote] aren't really [Resource] [id] is always 0.
 /// They're created as resource to make it easier to work with them through [VoteDataAccessObject].
 final class Vote extends Resource {
   /// Vote don't have ID so we make a fake one

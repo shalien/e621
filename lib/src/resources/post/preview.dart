@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// A Preview subpart of a post.
+/// A [Post.preview] subpart of a [Post].
 final class Preview {
   /// The width of the preview in pixels.
   final int width;

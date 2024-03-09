@@ -2,7 +2,7 @@ part of '../resource.dart';
 
 @immutable
 
-/// A post in the e621 API.
+/// A [Post] on the [E621Client.host] imageboard.
 final class Post extends Resource {
   /// creation date of the post in ISO 8601 format
   final String createdAt;

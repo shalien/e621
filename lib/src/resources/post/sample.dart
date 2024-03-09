@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// A Sample subpart of a post.
+/// A [Post.sample] subpart of a [Post].
 final class Sample {
   /// does the sample exist
   final bool has;

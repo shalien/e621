@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// A Score subpart of a post.
+/// A [Post.score] subpart of a [Post].
 final class Score {
   /// The number of upvotes.
   final int up;

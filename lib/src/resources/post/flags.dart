@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 @internal
 @immutable
 
-/// The flags of a post.
+/// The [Post.flags] of a [Post].
 final class Flags {
   /// is the post pending
   final bool pending;

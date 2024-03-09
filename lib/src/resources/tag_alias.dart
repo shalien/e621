@@ -1,6 +1,6 @@
 part of '../resource.dart';
 
-/// A tag alias in the e621 API.
+/// A [TagAlias] for a given [Tag].
 @immutable
 final class TagAlias extends Resource {
   /// The status of the tag alias

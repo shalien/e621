@@ -1,6 +1,8 @@
 part of '../resource.dart';
 
 @immutable
+
+/// A [Flag] on a [Post].
 final class Flag extends Resource {
   /// The time the flag was created in the format of YYYY-MM-DDTHH:MM:SS.MS+00:00.
   final String createdAt;
