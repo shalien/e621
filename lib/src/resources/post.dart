@@ -8,7 +8,7 @@ final class Post extends Resource {
   final String createdAt;
 
   /// last update date of the post in ISO 8601 format
-  final String updatedAt;
+  final String? updatedAt;
 
   /// Meta of the image
   final File file;

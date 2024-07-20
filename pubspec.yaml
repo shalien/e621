@@ -1,6 +1,6 @@
 name: e621
 description: A client library for the API of imageboard using e621 fork of gelbooru.
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/shalien/e621
 
 environment:
@@ -14,6 +14,6 @@ dependencies:
   meta: ^1.12.0
 
 dev_dependencies:
-  lints: ^3.0.0
+  lints: ^4.0.0
   pana: ^0.22.2
   test: ^1.25.2
