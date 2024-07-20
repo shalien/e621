@@ -11,7 +11,7 @@ final class TagDataAccessObject extends DataAccessObject<Tag> {
   /// - [nameMatches] is a tag name expression to match against, which can include `*` as a wildcard.
   /// - [category] is the category of the tag.
   /// - [order]  Changes the sort order. Pass one of [TagOrder.date] (default), [TagOrder.count], or [TagOrder.name].
-  /// - [hideEmpty]  Hide tags with zero visible posts. Defaults to [true].
+  /// - [hideEmpty]  Hide tags with zero visible posts. Defaults to `true`.
   /// - [hasWiki]  Set to `true` to only return tags with a wiki page.
   /// - [hasArtist]  Set to `true` to only return tags with an artist.
   /// - [limit]  The number of tags to return. Defaults to 75. Hard upper limit of 320.

@@ -159,7 +159,7 @@ final class PoolDataAccessObject extends DataAccessObject<Pool> {
     return true;
   }
 
-  /// Revert a pool to [version].
+  /// Revert a pool to a given version.
   /// [id] - The ID of the pool to revert.
   /// [versionId] - The version to revert to.
   Future<bool> revert({required int id, required int versionId}) async {
