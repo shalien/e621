@@ -1,4 +1,4 @@
-part of '../data_access_object.dart';
+part of '../core/data_access_object.dart';
 
 /// A data access object for pools.
 final class PoolDataAccessObject extends DataAccessObject<Pool> {

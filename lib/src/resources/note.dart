@@ -1,4 +1,4 @@
-part of '../resource.dart';
+part of '../core/resource.dart';
 
 /// A [Note] on a [Post].
 final class Note extends Resource {
