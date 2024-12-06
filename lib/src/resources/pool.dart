@@ -1,4 +1,4 @@
-part of '../resource.dart';
+part of '../core/resource.dart';
 
 /// A [Pool] of [Post]s.
 final class Pool extends Resource {

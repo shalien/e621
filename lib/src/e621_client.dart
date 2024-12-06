@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
-import 'data_access_object.dart';
+import 'core/data_access_object.dart';
 
 /// A client for the e621 API.
 class E621Client extends BaseClient {
