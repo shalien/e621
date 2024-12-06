@@ -37,21 +37,17 @@ final class Artist extends Resource {
     required this.note,
   }) : super._();
 
+  Artist._fromJson(super.json)
+      : name = json['name'],
+        isActive = json['is_active'],
+        otherNames = json['other_names'],
+        linkedUserId = json['linked_user_id'],
+        creatorId = json['creator_id'],
+        isLocked = json['is_locked'],
+        note = json['note'],
+        super._fromJson();
+
   /// Creates a new [Artist] from a JSON object.
-  factory Artist._fromJson(Map<String, dynamic> json) {
-    return Artist._(
-      id: json['id'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      updatedAt: DateTime.parse(json['updated_at'] as String),
-      name: json['name'] as String,
-      isActive: json['is_active'] as bool,
-      otherNames: (json['other_names'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      linkedUserId: json['linked_user_id'] as String?,
-      creatorId: json['creator_id'] as String,
-      isLocked: json['is_locked'] as bool,
-      note: json['note'] as String?,
-    );
-  }
+  factory Artist.fromJson(final Map<String, dynamic> json) =>
+      Artist._fromJson(json);
 }

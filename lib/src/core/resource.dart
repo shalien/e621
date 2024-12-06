@@ -1,5 +1,7 @@
 import 'package:meta/meta.dart';
 
+import '../enums/status.dart';
+import '../enums/warning_type.dart';
 import '../resources/post/file.dart';
 import '../resources/post/flags.dart';
 import '../resources/post/preview.dart';
@@ -12,6 +14,14 @@ import '../utils/pool_category.dart';
 part '../resources/artist.dart';
 part '../resources/artist_url.dart';
 part '../resources/artist_version.dart';
+part '../resources/avoid_posting.dart';
+part '../resources/avoid_posting_version.dart';
+part '../resources/ban.dart';
+part '../resources/blip.dart';
+part '../resources/bulk_related_tag.dart';
+part '../resources/bulk_update_request.dart';
+part '../resources/comment.dart';
+part '../resources/current_user.dart';
 part '../resources/flag.dart';
 part '../resources/note.dart';
 part '../resources/pool.dart';
@@ -39,4 +49,10 @@ abstract base class Resource {
     required this.createdAt,
     required this.updatedAt,
   });
+
+  Resource._fromJson(final Map<String, dynamic> json)
+      : this._(
+            id: json['id'],
+            createdAt: DateTime.parse(json['created_at']),
+            updatedAt: DateTime.parse(json['updated_at']));
 }
