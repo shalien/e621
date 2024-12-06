@@ -1,4 +1,4 @@
-part of '../data_access_object.dart';
+part of '../core/data_access_object.dart';
 
 /// A data access object for favorites.
 /// Unlike others DAO this one returns [Post] and no Favorite

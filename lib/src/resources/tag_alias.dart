@@ -1,4 +1,4 @@
-part of '../resource.dart';
+part of '../core/resource.dart';
 
 /// A [TagAlias] for a given [Tag].
 @immutable

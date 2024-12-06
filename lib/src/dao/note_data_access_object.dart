@@ -1,4 +1,4 @@
-part of '../data_access_object.dart';
+part of '../core/data_access_object.dart';
 
 /// Allow to interact with notes.
 final class NoteDataAccessObject extends DataAccessObject<Note> {

@@ -72,8 +72,8 @@
 library;
 
 export 'src/e621_client.dart';
-export 'src/resource.dart';
-export 'src/data_access_object.dart';
+export 'src/core/resource.dart';
+export 'src/core/data_access_object.dart';
 
 /// Utilities
 export '/src/utils/pool_category.dart';
