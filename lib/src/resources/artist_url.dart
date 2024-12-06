@@ -22,15 +22,13 @@ final class ArtistUrl extends Resource {
       required this.isActive})
       : super._();
 
-  factory ArtistUrl._fromJson(Map<String, dynamic> json) {
-    return ArtistUrl._(
-      id: json['id'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      updatedAt: DateTime.parse(json['updated_at'] as String),
-      artistId: json['artist_id'] as String,
-      url: Uri.parse(json['url'] as String),
-      normalizedUrl: Uri.parse(json['normalized_url'] as String),
-      isActive: json['is_active'] as bool,
-    );
-  }
+  ArtistUrl._fromJson(super.json)
+      : artistId = json['artist_id'],
+        url = Uri.parse(json['url']),
+        normalizedUrl = Uri.parse(json['normalized_url']),
+        isActive = json['is_active'] == '1',
+        super._fromJson();
+
+  factory ArtistUrl.fromJson(final Map<String, dynamic> json) =>
+      ArtistUrl._fromJson(json);
 }

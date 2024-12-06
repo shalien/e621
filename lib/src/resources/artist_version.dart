@@ -32,22 +32,16 @@ final class ArtistVersion extends Resource {
     required this.urls,
   }) : super._();
 
-  factory ArtistVersion._fromJson(Map<String, dynamic> json) {
-    return ArtistVersion._(
-      id: json['id'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
-      updatedAt: DateTime.parse(json['updated_at'] as String),
-      artistId: json['artist_id'] as String,
-      name: json['name'] as String,
-      updaterId: json['updater_id'] as String,
-      isActive: json['is_active'] as bool,
-      otherNames: (json['other_names'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      notesChanged: json['notes_changed'] as bool,
-      urls: (json['urls'] as List<dynamic>)
-          .map((e) => Uri.parse(e as String))
-          .toList(),
-    );
-  }
+  ArtistVersion._fromJson(super.json)
+      : artistId = json['artist_id'],
+        name = json['name'],
+        updaterId = json['updater_id'],
+        isActive = json['is_active'],
+        otherNames = json['other_names'],
+        notesChanged = json['notes_changed'],
+        urls = json['urls'].map((e) => Uri.parse(e)),
+        super._fromJson();
+
+  factory ArtistVersion.fromJson(final Map<String, dynamic> json) =>
+      ArtistVersion._fromJson(json);
 }
