@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 
+import '../enums/default_image_size.dart';
 import '../enums/status.dart';
 import '../enums/warning_type.dart';
 import '../resources/post/file.dart';
@@ -22,6 +23,7 @@ part '../resources/bulk_related_tag.dart';
 part '../resources/bulk_update_request.dart';
 part '../resources/comment.dart';
 part '../resources/current_user.dart';
+part '../resources/dmail.dart';
 part '../resources/flag.dart';
 part '../resources/note.dart';
 part '../resources/pool.dart';
