@@ -11,6 +11,6 @@ enum Status {
   String toString() => _value;
 
   factory Status.fromString(final String value) => Status.values.firstWhere(
-      (e) => e._value == value,
+      (e) => e._value == value.toLowerCase(),
       orElse: () => throw ArgumentError.value(value, 'value', 'Invalid value'));
 }

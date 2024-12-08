@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:e621/e621.dart';
 import 'package:test/test.dart';
 
 void main() async {

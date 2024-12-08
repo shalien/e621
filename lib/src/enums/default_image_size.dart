@@ -12,7 +12,8 @@ enum DefaultImageSize {
   String toString() => _value;
 
   factory DefaultImageSize.fromString(final String value) =>
-      DefaultImageSize.values.firstWhere((element) => element._value == value,
+      DefaultImageSize.values.firstWhere(
+          (element) => element._value == value.toLowerCase(),
           orElse: () =>
               throw ArgumentError.value(value, 'value', 'Invalid value'));
 }

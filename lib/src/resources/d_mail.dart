@@ -1,6 +1,6 @@
 part of '../core/resource.dart';
 
-final class Dmail extends Resource {
+final class DMail extends Resource {
   final String ownerId;
 
   final String fromId;
@@ -15,7 +15,7 @@ final class Dmail extends Resource {
 
   final bool isDeleted;
 
-  const Dmail({
+  const DMail({
     required super.id,
     required super.createdAt,
     required super.updatedAt,
@@ -28,7 +28,7 @@ final class Dmail extends Resource {
     required this.isDeleted,
   }) : super._();
 
-  Dmail._fromJson(super.json)
+  DMail._fromJson(super.json)
       : ownerId = json['owner_id'],
         fromId = json['from_id'],
         toId = json['to_id'],
@@ -38,6 +38,6 @@ final class Dmail extends Resource {
         isDeleted = json['is_deleted'],
         super._fromJson();
 
-  factory Dmail.fromJson(final Map<String, dynamic> json) =>
-      Dmail._fromJson(json);
+  factory DMail.fromJson(final Map<String, dynamic> json) =>
+      DMail._fromJson(json);
 }

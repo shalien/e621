@@ -11,7 +11,7 @@ enum WarningType {
   String toString() => _value;
 
   factory WarningType.fromString(final String value) =>
-      WarningType.values.firstWhere((e) => e._value == value,
+      WarningType.values.firstWhere((e) => e._value == value.toLowerCase(),
           orElse: () =>
               throw ArgumentError.value(value, 'value', 'Invalid value'));
 }
